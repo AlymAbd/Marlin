@@ -1,2 +1,10 @@
 env0/*
 **env**
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb
+*.pyc
+.json
+.bat
