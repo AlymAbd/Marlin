@@ -25,7 +25,7 @@ SECRET_KEY = 'juy#wsb1-l($$dz(2nc1twv1_sd9gvfq1+)lzson-$*t-v3pou'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hello'
+    'products'
 ]
 
 MIDDLEWARE = [
