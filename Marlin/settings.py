@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
 # Application definition
 
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'home_page',
     'crispy_forms',
     'orders',
-    'rest_framework'
+    'rest_framework',
+    'django_extensions',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -59,7 +61,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Marlin.urls'
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
+TEMPLATE_DIR = os.path.join(BASE_DIR, "_templates")
 
 TEMPLATES = [
     {
@@ -127,4 +129,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+
+STATIC_URL = '/_static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '_static'),
+]
+
+MEDIA_ROOT = (os.path.join(BASE_DIR, '_media'))
+
+MEDIA_URL = '/_media/'
+
+ADMIN_MEDIA_PREFIX = '/_static/admin/'

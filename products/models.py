@@ -21,6 +21,8 @@ class Products(models.Model):
 class Groups(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
+    parent_id = models.IntegerField(blank=True, null=True)
+    is_category = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
 
     def __str__(self):
@@ -28,6 +30,22 @@ class Groups(models.Model):
 
     class Meta:
         verbose_name_plural="Groups"
+
+#FAKE MODEL
+class Categories(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True, null=True)
+    parent = models.ForeignKey(Groups, on_delete=models.DO_NOTHING)
+    is_category = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural="Categories"
+        db_table = "products_groups"
+        managed = False
 
 
 class ProductsGroups(models.Model):
