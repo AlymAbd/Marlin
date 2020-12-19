@@ -12,7 +12,7 @@ class Products(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.name
+        return f"id: {self.pk}, name: {self.name}"
 
     class Meta:
         verbose_name_plural="Products for cats"
@@ -50,7 +50,7 @@ class Categories(models.Model):
 
 class ProductsGroups(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
-    group = models.ForeignKey(Groups, on_delete=models.CASCADE)
+    group = models.ForeignKey(Categories, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name_plural="Products groups"
@@ -58,7 +58,12 @@ class ProductsGroups(models.Model):
 
 class Prices(models.Model):
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
-    price = models.CharField(max_length=50)
+    purchase_price = models.DecimalField(max_digits=21, decimal_places=2)
+    sale_price = models.DecimalField(max_digits=21, decimal_places=2)
+    margin = models.DecimalField(max_digits=21, decimal_places=2, default=20)
+    curr = models.CharField(max_length=3, default='BYN')
+    state = models.CharField(max_length=255, default='active')  #ACTIVE, DISABLE, DISCOUNT
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:

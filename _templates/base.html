@@ -25,7 +25,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {% for cat in groups.food %}
-                <a class="dropdown-item" href="category/{{ cat.id }}"> {{ cat.name }}</a>
+                <a class="dropdown-item" href="products/category/{{ cat.id }}"> {{ cat.name }}</a>
               {% endfor %}
             </div>
           </div>
@@ -35,7 +35,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {% for cat in groups.pills %}
-                <a class="dropdown-item" href="category/{{ cat.id }}"> {{ cat.name }}</a>
+                <a class="dropdown-item" href="products/category/{{ cat.id }}"> {{ cat.name }}</a>
               {% endfor %}              
             </div>
           </div>
@@ -45,7 +45,7 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {% for cat in groups.toys %}
-                <a class="dropdown-item" href="category/{{ cat.id }}"> {{ cat.name }}</a>
+                <a class="dropdown-item" href="products/category/{{ cat.id }}"> {{ cat.name }}</a>
               {% endfor %}              
             </div>
           </div>
@@ -67,7 +67,7 @@
     </nav>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12">
+        <div>
           <h1 class="mt-2">Marlin</h1>
           <hr class="mt-0 mb-4">
           {% block content %}
