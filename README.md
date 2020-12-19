@@ -1,5 +1,7 @@
 ## Marlin - Get Ready To Rock!
+
 <br>
+
 # Создание и активация виртуальной среды Python
 <pre>python -m venv env0</pre>
 <pre>activate env0</pre>
