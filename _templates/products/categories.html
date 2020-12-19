@@ -6,11 +6,13 @@
   <div class="card price_{{ product.prices__state }}" id="{{ product.id }}">
     <img class="card-img-top" src="{{ product.image }}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
+      <a href="/products/product/{{ product.id }}">
+        <h5 class="card-title">{{ product.name }}</h5>
+      </a>
       <p class="card-text">{{ product.description }}</p>
     </div>
     <div class="card-footer">
-      <p class="h5">{{ product.prices__sale_price }} - {{ product.prices__curr }}</p>
+      <p class="h5">{{ product.prices__curr }}: {{ product.prices__sale_price }}</p>
     </div>
   </div>
 {% endfor %}
