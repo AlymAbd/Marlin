@@ -21,9 +21,9 @@
 <pre>python manage.py runserver</pre>
 
 аргс:
-+    --host 0.0.0.0  &nbsp;&nbsp;&nbsp;Запускаем на определенном локальном адресе
-+    --port 80       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Порт 
++    0.0.0.0:80  &nbsp;&nbsp;&nbsp;&nbsp;Запускаем на определенном локальном адресе, Порт 80 
 +    --no-reload     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Без перезагрузки в случае изменений в коде
++    --insecure     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Запуск без JS скриптов
 
 
 # Запуск Jupyter-notebook из под джанги (VENV req)
