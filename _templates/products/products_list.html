@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<script src="{% static 'products\js\products_info.js' %}"></script>
+
+<div class="row row-cols-1 row-cols-md-2">
+    {% for product in prod_list %}
+    <div class="col mb-4">
+      <div class="card" style="width: 18rem;">
+        <input value="{{product.id}}" hidden id="unput_id">  
+        <img src="{{product.image}}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title"> {{product.name}}</h5>
+            <p class="card-text">
+              id : {{product.id}}
+              <br>
+              price : {{product.prices__purchase_price}}
+              <br>
+              sale price : {{product.prices__sale_price}}
+            </p>
+            <button type="button" class="btn btn-outline-warning" id="btn_detail">Details</button>
+          </div>
+      </div>
+    </div>
+  
+    {% endfor %}
+    
+</span>
+
+{% endblock content %}
