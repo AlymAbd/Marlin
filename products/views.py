@@ -62,3 +62,35 @@ def get_products_info(request):
         'prices__sale_price', 'image'
     )
     return JsonResponse({'product' : list(product)})
+
+
+class products_list_ajax(TemplateView):
+    template_name = 'products/products_list_ajax.html'
+
+    def get_context_data(self, **kwargs):
+            context = super().get_context_data(**kwargs)
+            return context
+
+
+@api_view(['GET'])
+def get_products_list_ajax(request):
+    query = request.query_params
+    group_id = query.get('id_group')
+    price_from = query.get('from_price')
+    price_to = query.get('to_price')
+    product = models.Products.objects.values(
+        'name', 'id', 'description', 
+        'prices__sale_price', 'image'
+    )
+    if group_id:
+        product = product.filter(productsgroups__group = group_id)
+    
+    if price_from:
+        product = product.filter(prices__sale_price__gte = price_from)
+
+    if price_to:
+        product = product.filter(prices__sale_price__lte = price_to)
+
+    return JsonResponse({'product' : list(product)})
+
+

@@ -1,10 +1,44 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<a href="admin/" class="btn btn-warning mb-1">click here</a>
+<a href="admin/" class="btn btn-warning mb-1">Database</a>
+
 <br>
-<a href="about/" class="btn btn-warning mb-1">about</a>
+<div class="dropright">
+    <button type="button" class="btn btn-warning dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Food
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for cat in groups.food %}
+          <a class="dropdown-item" href="products/category/{{ cat.id }}"> {{ cat.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="dropright">
+    <button type="button" class="btn btn-warning dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Pills
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for cat in groups.pills %}
+          <a class="dropdown-item" href="products/category/{{ cat.id }}"> {{ cat.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="dropright">
+    <button type="button" class="btn btn-warning dropdown-toggle mb-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Toys
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for cat in groups.toys %}
+          <a class="dropdown-item" href="products/category/{{ cat.id }}"> {{ cat.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+<a href="contacts/" class="btn btn-warning mb-1">Contacts</a>
 <br>
-<a href="contacts/" class="btn btn-warning mb-1">contacts</a>
+<a href="about/" class="btn btn-info mb-1">About</a>
 
 {% endblock content %}

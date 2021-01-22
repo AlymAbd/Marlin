@@ -14,9 +14,9 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <img src="{% static 'base/images/kitty.png' %}" width="30" height="30" alt="" class="mr-1">
       <a class="navbar-brand" href="/">Marlin</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> -->
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <div class="dropdown show">
@@ -49,16 +49,7 @@
               {% endfor %}              
             </div>
           </div>
-          <div class="dropdown show">
-            <button class="btn btn-primary btn-sm mr-1" type="button" id="dropdown_other" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              About
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </div>
+            <a href="about/" class="btn btn-info btn-sm mr-1">About</a>
         </ul>
         <span class="navbar-text">
           {% comment %} Тут будет наша плашка с авторизацией {% endcomment %}
